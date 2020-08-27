@@ -12,9 +12,9 @@ function Routes(props) {
     return (
         <Switch>
             <Route exact path='/' component={Frontpage} />
-            <Route path='/dashboard' component={Dashboard} />
             <Route path='/register' component={Register} />
             <Route path='/login' component={Login} />
+            <Route path='/dashboard' component={Dashboard} />
             <Route path='/post/:id' component={Post} />
             <Route path='/profile' component={Profile} />
             <Route path='/submit' component={Submit} />

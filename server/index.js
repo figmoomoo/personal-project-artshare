@@ -31,5 +31,5 @@ app.post('/api/login', authController.login)
 app.get('/api/logout/', authController.logout)
 
 app.listen(SERVER_PORT, () => {
-    console.log(`Testing, testing on ${SERVER_PORT}`)
+    console.log(`Bro, is it working? ${SERVER_PORT}`)
 })

@@ -5,20 +5,20 @@ module.exports = {
         const db = req.app.get('db')
         const {username, password} = req.body
         console.log(req.body)
-        const results = await db.get_user(username)
+        const results = await db.users.get_user(username)
         if(results[0]){
             return res.status(400).send("Username taken")
         }
         const salt = bcrypt.genSaltSync(10)
         const hash = bcrypt.hashSync(password, salt)
-        const [user] = await db.register_user(username, hash)
+        const [user] = await db.users.register_user(username, hash)
         req.session.user = user
         return res.status(200).send(req.session.user)
     },
     login: async(req, res) => {
         const db = req.app.get('db')
         const {username, password} = req.body
-        const results = await db.get_user(username)
+        const results = await db.users.get_user(username)
         if(!results[0]){
             return res.status(400).send("User not found")
         }

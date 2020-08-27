@@ -1,11 +1,24 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
+import {connect} from 'react-redux'
+import {logoutUser, getUser} from '../../ducks/reducer'
+import axios from 'axios'
 
-class FrontNav extends Component{
-    render(){
-        return(
-            <div>Nav bar2</div>
-        )
+class Nav extends Component{
+    componentDidMount(){
+        this.props.getUser();
+    }
+
+
+
+    render(props){
+        return<div>
+            <button>Register</button>
+            <button>Login</button>
+        </div>
     }
 }
 
-export default FrontNav;
+const mapStateToProps = state => state;
+
+export default connect(mapStateToProps, {logoutUser, getUser})(Nav);

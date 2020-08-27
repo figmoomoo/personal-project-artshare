@@ -1,2 +1,2 @@
-SELECT *  FROM artUsers
+SELECT * FROM artUsers
 WHERE username = $1;

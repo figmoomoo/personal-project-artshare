@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import {connect} from 'react-redux';
+import {loginUser} from '../../ducks/reducer';
+import FrontNav from '../Nav/FrontNav';
 
 
 class Register extends Component{
@@ -24,14 +26,24 @@ class Register extends Component{
         })
     }
 
-    handleRegister = async () => {
-        let result = await axios.post('/api/register/', {
+    handleRegister = () => {
+        let result = axios.post('/api/register/', {
           username: this.state.username,
           password: this.state.password
         })
         console.log(result)
         this.props.loginUser(result.data)
         this.handleRedirect()
+    }
+
+    handleLogin = () => {
+        axios.post('/api/login/', {
+          username: this.state.username,
+          password: this.state.password
+        }).then(res => {
+            this.props.loginUser(res.data)
+            this.handleRedirect()
+        }).catch(err => { console.log('Unable to login') })
     }
 
     handleRedirect = () => {
@@ -43,6 +55,7 @@ class Register extends Component{
         console.log(this.props)
         return(
             <div className="Register">
+                <FrontNav />
                 <div className="Register-Box">
                     <h1>Register Page</h1>
                     <div>
@@ -62,4 +75,4 @@ class Register extends Component{
 
   const mapStateToProps = state => state;
 
-  export default connect(mapStateToProps) (Register)
+  export default connect(mapStateToProps, {loginUser}) (Register)
