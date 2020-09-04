@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import {connect} from 'react-redux';
 import {loginUser} from '../../ducks/reducer';
-import FrontNav from '../Nav/FrontNav'
 
 
 class Login extends Component{
@@ -46,7 +45,6 @@ class Login extends Component{
         console.log(this.props)
         return(
             <div className="Login">
-                <FrontNav />
                 <div className="Login-Box">
                     <h1>Login Page</h1>
                     <div>

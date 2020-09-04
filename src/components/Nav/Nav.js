@@ -5,10 +5,6 @@ import {logoutUser, getUser} from '../../ducks/reducer'
 import axios from 'axios'
 
 class Nav extends Component{
-    componentDidMount(){
-        this.props.getUser();
-    }
-
     logout = () => {
         axios.get('/api/logout').then( res => {
             this.props.logoutUser();
@@ -18,8 +14,9 @@ class Nav extends Component{
 
     render(props){
         return<div>
-            <button>Profile</button>
-            <button>Submit</button>
+            <button><Link to="/dashboard">Logo</Link></button>
+            <button><Link to={`/profile/${this.props.user.user_id}`}>Profile</Link></button>
+            <button><Link to="/submit">Submit</Link></button>
             <button onClick={this.logout}><Link to="/">Logout</Link></button>
         </div>
     }

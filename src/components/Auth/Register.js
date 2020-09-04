@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import {connect} from 'react-redux';
 import {loginUser} from '../../ducks/reducer';
-import FrontNav from '../Nav/FrontNav';
 
 
 class Register extends Component{
@@ -55,7 +54,6 @@ class Register extends Component{
         console.log(this.props)
         return(
             <div className="Register">
-                <FrontNav />
                 <div className="Register-Box">
                     <h1>Register Page</h1>
                     <div>

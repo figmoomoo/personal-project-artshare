@@ -1,14 +1,12 @@
 import React from 'react';
-import FrontNav from '../Nav/FrontNav'
 
-function Frontpage(){
+function FrontPage(){
     return(
         <div>
-            <FrontNav />
-            <div>Frontpage</div>
+            <div>FrontPage</div>
         </div>
     )
 }
 
 
-export default Frontpage;
+export default FrontPage;

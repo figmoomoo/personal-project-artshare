@@ -1,6 +1,7 @@
 import React, {Component}from 'react';
 import './App.css';
 import Nav from './components/Nav/Nav'
+import FrontNav from './components/Nav/FrontNav'
 import Routes from "./routes"
 import {withRouter} from 'react-router-dom'
 
@@ -8,7 +9,7 @@ class App extends Component{
   render(){
     return (
       <div className="App">
-        {this.props.location.pathname === "/" ? null: <Nav/>}
+        {this.props.location.pathname === "/" || this.props.location.pathname === "/register" || this.props.location.pathname === "/login" ? <FrontNav /> : <Nav/>}
         <Routes />
       </div>
     );

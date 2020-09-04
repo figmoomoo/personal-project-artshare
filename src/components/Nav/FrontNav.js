@@ -9,12 +9,10 @@ class Nav extends Component{
         this.props.getUser();
     }
 
-
-
     render(props){
         return<div>
-            <button>Register</button>
-            <button>Login</button>
+            <button><Link to="/register">Register</Link></button>
+            <button><Link to="/login">Login</Link></button>
         </div>
     }
 }

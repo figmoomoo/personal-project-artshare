@@ -1,0 +1,1 @@
+SELECT * FROM artPosts ORDER BY post_id DESC;
