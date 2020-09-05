@@ -17,7 +17,8 @@ module.exports = {
     },
     getArtById: (req, res) => {
         const db = req.app.get('db')
-        db.posts.get_user_art().then(artPosts => {
+        const {id} = req.params
+        db.posts.get_post(id).then(artPosts => {
             res.status(200).send(artPosts)
         })
     },

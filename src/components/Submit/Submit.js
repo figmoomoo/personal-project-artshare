@@ -14,7 +14,9 @@ class Submit extends Component{
     }
 
     componentDidMount(){
-
+        if(this.props.match.params.id){
+            
+        }
     }
 
     handleChangeTitle = (value) => {
@@ -29,22 +31,34 @@ class Submit extends Component{
         this.setState({image: value})
     }
 
-    handleReset = () => {
-        const resetForm = {
+    addPost = () => {
+        const newArt = {
             title: this.state.title,
             description: this.state.description,
             image: this.state.image,
             post_points: 0
         }
-    }
 
-    addPost = () => {
-        
+        axios.post(`/api/newPost`, newArt).then(() => {
+            this.props.history.push(`/post/${this.props.match.params.id}`)
+        })
     }
 
     render(){
         return(
-            <div>Submit</div>
+            <div>
+                <div className="input-section">
+                    <div>Image:</div>
+                    <input value={this.state.image} onChange={(e) => this.handleChangeImage(e.target.value)}/>
+                    <div>Title:</div>
+                    <input value={this.state.title} onChange={(e) => this.handleChangeTitle(e.target.value)}/>
+                    <div>Description:</div>
+                    <input value={this.state.description} onChange={(e) => this.handleChangeDescription(e.target.value)}/>
+                </div>
+                <div className="form-buttons">
+                    <button onClick={this.addPost}>SUBMIT</button>
+                </div>
+            </div>
         )
     }
 }

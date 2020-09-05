@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import {Link} from "react-router-dom"
+import {getUser} from '../../ducks/reducer'
 import axios from "axios";
 
 class Dashboard extends Component {
@@ -24,15 +25,25 @@ class Dashboard extends Component {
     if (this.state.artBulletin.length === 0) {
       return <></>;
     } else {
-      const mappedArt = this.state.artBulletin.map((element) => {
+      const mappedArt = this.state.artBulletin.map((e) => {
         return (
-          <div key = {element.post_id}>
+          <div key = {e.post_id}>
             <img
-              src={element.image}
+              src={e.image}
               style={{ height: 500 }}
             />
-            <h3>{element.title}</h3>
-            <h3>{element.description}</h3>
+            <h3>
+              <Link to ={`/post/${e.post_id}`}>
+                {e.title}
+              </Link>
+            </h3>
+            <h3>
+              by: 
+              <Link to = {`/profile/${e.user_id}`}>
+                {e.username}
+              </Link>
+            </h3>
+            <h3>{e.description}</h3>
           </div>
         );
       });
@@ -44,6 +55,7 @@ class Dashboard extends Component {
     }
   }
 }
+
 
 
 export default withRouter(Dashboard);

@@ -23,7 +23,11 @@ class Art extends Component {
         const specificMappedArt = this.state.specificArt.map((e) => {
             return (
                 <div>
-                    <img src={e.image}/>
+                    {console.log(e)}
+                    <img src={e.image} style={{height: 800}}/>
+                    <h3>{e.title}</h3>
+                    <h3>by: {e.username}</h3>
+                    <h3>{e.description}</h3>
                 </div>
             )
         })

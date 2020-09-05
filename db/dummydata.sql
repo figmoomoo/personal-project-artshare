@@ -17,3 +17,8 @@ INSERT INTO artPosts
 (title, description, image, post_points, user_id)
 VALUES
 ('#4 test title', '#4 test description', 'https://cdn.discordapp.com/attachments/585961430256320572/748991774113923214/LEECH2.jpg', 0, 2)
+
+
+UPDATE artUsers
+SET profile_picture = https://cdn.discordapp.com/attachments/718455188100350035/751726563304800276/Enryu_PFP_new2.png
+WHERE user_id = 1

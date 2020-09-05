@@ -3,7 +3,8 @@ const express = require("express");
 const massive = require("massive");
 const authController = require("./authController");
 const postController = require("./postController")
-const session = require("express-session")
+const session = require("express-session");
+const userController = require("./userController");
 
 const app = express();
 
@@ -36,6 +37,10 @@ app.get('/api/logout/', authController.logout)
 app.get('/api/post/', postController.getAllArt)
 app.get('/api/art/:id', postController.getUserArt)
 app.get('/api/post/:id', postController.getArtById)
+app.post('/api/newPost/', postController.addArt)
+
+//User Endpoints
+app.get('/api/profile/:id', userController.getUserInfo)
 
 app.listen(SERVER_PORT, () => {
     console.log(`Bro, is it working? ${SERVER_PORT}`)
