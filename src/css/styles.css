@@ -1,0 +1,48 @@
+.dashboard {
+  background-color: #28282C;
+}
+
+.NavClass {
+  height: 200px;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #28282C;
+}
+
+.NavClass a {
+  text-decoration: none;
+  margin: 50px;
+}
+
+.NavClass Link {
+  color: #8EE3C8;
+}
+
+.NavClass .NavButtons {
+  text-decoration: none;
+  margin: 50px 50px;
+}
+
+.Footer {
+  color: #8EE3C8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #28282C;
+  font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+}
+
+Footer {
+  color: #28282C;
+}

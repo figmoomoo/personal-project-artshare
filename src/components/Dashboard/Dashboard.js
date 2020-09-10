@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import styles from '../../css/styles.css'
 import { withRouter } from "react-router-dom";
 import {Link} from "react-router-dom"
 import {getUser} from '../../ducks/reducer'
@@ -43,12 +44,13 @@ class Dashboard extends Component {
                 {e.username}
               </Link>
             </h3>
+            <h3>{e.post_points}</h3>
             <h3>{e.description}</h3>
           </div>
         );
       });
       return (
-        <div>
+        <div className="dashboard">
           {mappedArt}
         </div>
       );

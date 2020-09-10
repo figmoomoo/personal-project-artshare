@@ -1,0 +1,27 @@
+.NavClass {
+    height: 200px;
+    width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: $primary-dark-color;
+
+  a {
+    text-decoration: none;
+    margin: 50px;
+  }
+
+//   li {
+//     text-decoration: none;
+//     margin: 50px;
+//   }
+
+  Link {
+    color: $primary-mint-color;
+  }
+
+  .NavButtons {
+    text-decoration: none;
+    margin: 50px 50px;
+  }
+}

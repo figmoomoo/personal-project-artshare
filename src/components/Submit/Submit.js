@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import {connect} from 'react-redux'
+import ImageDrop from './ImageDrop'
 import axios from 'axios';
 
 class Submit extends Component{
@@ -36,11 +38,12 @@ class Submit extends Component{
             title: this.state.title,
             description: this.state.description,
             image: this.state.image,
-            post_points: 0
+            post_points: 0,
+            author_id: this.props.user.user_id
         }
 
-        axios.post(`/api/newPost`, newArt).then(() => {
-            this.props.history.push(`/post/${this.props.match.params.id}`)
+        axios.post(`/api/newPost`, newArt).then((res) => {
+            this.props.history.push(`/post/${res.data[0].post_id}`)
         })
     }
 
@@ -48,8 +51,9 @@ class Submit extends Component{
         return(
             <div>
                 <div className="input-section">
-                    <div>Image:</div>
-                    <input value={this.state.image} onChange={(e) => this.handleChangeImage(e.target.value)}/>
+                    {/* <div>Image:</div>
+                    <input value={this.state.image} onChange={(e) => this.handleChangeImage(e.target.value)}/> */}
+                    <ImageDrop />
                     <div>Title:</div>
                     <input value={this.state.title} onChange={(e) => this.handleChangeTitle(e.target.value)}/>
                     <div>Description:</div>
@@ -63,4 +67,6 @@ class Submit extends Component{
     }
 }
 
-export default Submit;
+const mapStateToProps = state => state
+
+export default connect(mapStateToProps)(Submit);

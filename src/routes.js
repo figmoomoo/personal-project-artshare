@@ -7,6 +7,7 @@ import Post from './components/Post/Post'
 import Profile from './components/Profile/Profile'
 import Submit from './components/Submit/Submit'
 import FrontPage from './components/Frontpage/Frontpage'
+// import Edit from './components/Art/Edit'
 
 function Routes(props) {
     return (
@@ -18,6 +19,7 @@ function Routes(props) {
             <Route path='/post/:id' component={Post} />
             <Route path='/profile/:id' component={Profile} />
             <Route path='/submit' component={Submit} />
+            {/* <Route path='/edit/:id' component={Edit}/> */}
         </Switch>
     )
 }

@@ -1,1 +1,2 @@
-DELETE FROM artPosts WHERE post_id = $1;
+DELETE FROM artPosts
+WHERE post_id = $1;

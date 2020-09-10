@@ -1,1 +1,1 @@
-SELECT * FROM artPosts WHERE user_id = $1;
+SELECT * FROM artPosts WHERE user_id = $1 ORDER BY post_id DESC;
