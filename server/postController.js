@@ -42,5 +42,12 @@ module.exports = {
         const {id} = req.params;
         const artPosts = await db.posts.delete_post(id)
         res.status(200).send(artPosts)
+    },
+    image: async (req, res) => {
+        const db = req.app.get('db');
+        const {image} = req.body;
+        const {post_id} = req.params;
+        await db.posts.s3update_post({image, post_id})
+        res.sendStatus(200)
     }
 }

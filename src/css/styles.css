@@ -13,16 +13,49 @@
 
 .NavClass a {
   text-decoration: none;
-  margin: 50px;
+  color: #8EE3C8;
 }
 
 .NavClass Link {
+  text-decoration: none;
   color: #8EE3C8;
 }
 
 .NavClass .NavButtons {
   text-decoration: none;
   margin: 50px 50px;
+}
+
+button {
+  display: inline-block;
+  padding: 0.35em 1.2em;
+  border: 0.1em solid #8EE3C8;
+  margin: 0 0.3em 0.3em 0;
+  border-radius: 0.12em;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  color: #8EE3C8;
+  background-color: transparent;
+  text-align: center;
+  transition: all 0.2s;
+}
+
+button Link {
+  color: #8EE3C8;
+}
+
+button:hover {
+  color: #8EE3C8;
+  background-color: #2673B8;
+}
+
+@media all and (max-width: 30em) {
+  a.button1 {
+    display: block;
+    margin: 0.4em auto;
+  }
 }
 
 .Footer {

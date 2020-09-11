@@ -37,6 +37,7 @@ massive({
 })
 
 app.use(express.json())
+app.use( express.static( `${__dirname}/../build` ) );
 
 //Auth Endpoints
 app.get('/api/user/', authController.getUser)
@@ -56,7 +57,8 @@ app.put('/api/edit/:id', postController.updateArt)
 app.get('/api/profile/:id', userController.getUserInfo)
 
 //AWS Endpoint
-app.get('/sign-s3', (req, res) => {
+app.post('/addImage/:id', postController.image)
+app.get('/api/signs3', (req, res) => {
 
     aws.config = {
       region: 'us-west-1',
@@ -64,7 +66,7 @@ app.get('/sign-s3', (req, res) => {
       secretAccessKey: AWS_SECRET_ACCESS_KEY
     }
     
-    const s3 = new aws.S3();
+    const s3 = new aws.S3({signatureVersion: "v4"});
     const fileName = req.query['file-name'];
     const fileType = req.query['file-type'];
     const s3Params = {

@@ -53,7 +53,7 @@ class Submit extends Component{
                 <div className="input-section">
                     {/* <div>Image:</div>
                     <input value={this.state.image} onChange={(e) => this.handleChangeImage(e.target.value)}/> */}
-                    <ImageDrop />
+                    <ImageDrop handleChangeImage={this.handleChangeImage}/>
                     <div>Title:</div>
                     <input value={this.state.title} onChange={(e) => this.handleChangeTitle(e.target.value)}/>
                     <div>Description:</div>

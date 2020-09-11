@@ -1,6 +1,6 @@
 .NavClass {
-    height: 200px;
-    width: 100vw;
+  height: 200px;
+  width: 100vw;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -8,20 +8,46 @@
 
   a {
     text-decoration: none;
-    margin: 50px;
+    color: $primary-mint-color;
   }
 
-//   li {
-//     text-decoration: none;
-//     margin: 50px;
-//   }
-
   Link {
+    text-decoration: none;
     color: $primary-mint-color;
   }
 
   .NavButtons {
     text-decoration: none;
     margin: 50px 50px;
+  }
+}
+
+button {
+  display: inline-block;
+  padding: 0.35em 1.2em;
+  border: 0.1em solid $primary-mint-color;
+  margin: 0 0.3em 0.3em 0;
+  border-radius: 0.12em;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  color: $primary-mint-color;
+  background-color: transparent;
+  text-align: center;
+  transition: all 0.2s;
+
+  Link {
+    color: $primary-mint-color;
+  }
+}
+button:hover {
+  color: $primary-mint-color;
+  background-color: $primary-blue-color;
+}
+@media all and (max-width: 30em) {
+  a.button1 {
+    display: block;
+    margin: 0.4em auto;
   }
 }

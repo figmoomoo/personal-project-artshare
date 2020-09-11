@@ -7,30 +7,29 @@ import axios from "axios";
 class ImageDrop extends Component {
   constructor() {
     super();
-
     this.state = {
-        isUploading: false,
-        url: 'http://via.placeholder.com/450x450'
-    }
+      isUploading: false,
+      url: 'http://via.placeholder.com/450x450',
+    };
   }
 
   getSignedRequest = ([file]) => {
     this.setState({ isUploading: true });
 
-    const fileName = `${randomString()}-${file.name.replace(/\s/g, "-")}`;
+    const fileName = `${randomString()}-${file.name.replace(/\s/g, '-')}`;
 
     axios
-      .get("/sign-s3", {
+      .get('/api/signs3', {
         params: {
-          "file-name": fileName,
-          "file-type": file.type,
+          'file-name': fileName,
+          'file-type': file.type,
         },
       })
-      .then((response) => {
+      .then(response => {
         const { signedRequest, url } = response.data;
         this.uploadFile(file, signedRequest, url);
       })
-      .catch((err) => {
+      .catch(err => {
         console.log(err);
       });
   };
@@ -38,49 +37,55 @@ class ImageDrop extends Component {
   uploadFile = (file, signedRequest, url) => {
     const options = {
       headers: {
-        "Content-Type": file.type,
+        'Content-Type': file.type,
       },
     };
 
-    axios.put(signedRequest, file, options).then((response) => {
-      this.setState({ isUploading: false, url });
-      // .post("/api/img", {url})
-    });
+    axios
+      .put(signedRequest, file, options)
+      .then(response => {
+        this.setState({ isUploading: false, url });
+        this.props.handleChangeImage(this.state.url)
+        // THEN DO SOMETHING WITH THE URL. SEND TO DB USING POST REQUEST OR SOMETHING
+      })
+      .catch(err => {
+        this.setState({
+          isUploading: false,
+        });
+        console.log(err)
+      });
   };
 
   render() {
     const { url, isUploading } = this.state;
     return (
-      <Dropzone
-        onDropAccepted={this.getSignedRequest}
-        accept="image/*"
-        multiple={false}
-      >
-        {({ getRootProps, getInputProps }) => (
-          <div
-            style={{
-              position: "relative",
-              width: 160,
-              height: 80,
-              borderWidth: 5,
-              marginTop: 25,
-              borderColor: "gray",
-              borderStyle: "dashed",
-              borderRadius: 5,
-              display: "inline-block",
-              fontSize: 17,
-            }}
-            {...getRootProps()}
-          >
-            <input {...getInputProps()} />
-            {isUploading ? (
-              <GridLoader />
-            ) : (
-              <p>Drop files here, or click to select files</p>
-            )}
-          </div>
-        )}
-      </Dropzone>
+      <div className="App">
+        <h1>Upload</h1>
+        <h1>{url}</h1>
+        <img src={url} alt="" width="450px" />
+
+        <Dropzone
+          onDropAccepted={this.getSignedRequest}
+          style={{
+            position: 'relative',
+            width: 200,
+            height: 200,
+            borderWidth: 7,
+            marginTop: 100,
+            borderColor: 'rgb(102, 102, 102)',
+            borderStyle: 'dashed',
+            borderRadius: 5,
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            fontSize: 28,
+          }}
+          accept="image/*"
+          multiple={false}
+        >
+          {isUploading ? <GridLoader /> : <p>Drop File or Click Here</p>}
+        </Dropzone>
+      </div>
     );
   }
 }

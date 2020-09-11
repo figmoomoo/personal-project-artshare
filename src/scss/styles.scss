@@ -2,6 +2,7 @@
 @import "dashboard";
 @import "nav";
 @import "footer";
+@import "art";
 
 * {
   box-sizing: border-box;
@@ -13,10 +14,6 @@ body {
   background-color: $primary-dark-color;
   font-family: $calibri-font-stack;
 }
-
-
-
-
 
 Footer {
   color: $primary-dark-color
