@@ -26,17 +26,23 @@ class Profile extends Component {
   render() {
     const userMappedArt = this.state.userArt.map((e) => {
       return (
-        <div key={e.post_id}>
-          <img src={e.image} style={{ height: 500 }}/>
-          <h3>
-            <Link to={`/post/${e.post_id}`}>{e.title}</Link>
-          </h3>
-          <h3>{e.description}</h3>
+        <div key={e.post_id} className="profile-page">
+          <div className="profile-post">
+            <img src={e.image} className="profile-image"/>
+            <div className="post-header">
+              <h3 className="post-header-left">
+                <Link to={`/post/${e.post_id}`}>{e.title}</Link>
+              </h3>
+              <h3>{e.post_points}</h3>
+            </div>
+            
+            <h3>{e.description}</h3>
+          </div>
         </div>
       );
     });
     return (
-        <div>
+        <div className="profile-page">
             <ProfileDash />
             {userMappedArt}
         </div>

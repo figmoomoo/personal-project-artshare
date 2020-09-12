@@ -1,0 +1,48 @@
+.submit {
+    height: auto;
+    width: 100vw;
+    margin-top: 25px;
+    display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+    .submit-section {
+        height: 750px;
+        width: 400px;
+        border: 0.2em solid $primary-mint-color;
+        color: $primary-mint-color;
+        .Image-Drop {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            justify-content: center;
+            align-items: center;
+            margin-top: 50px;   
+            .drop-text {
+                color: $primary-mint-color;
+            }
+        }
+        .input-section{
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            justify-content: center;
+            align-items: center;
+            .submit-input-title {
+                background: transparent;
+                border: $primary-mint-color;
+                color: $primary-mint-color;
+            }
+            .submit-input-description {
+                height: 100px;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                background: transparent;
+                border: $primary-mint-color;
+                color: $primary-mint-color;
+            }
+        }
+    }
+}

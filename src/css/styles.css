@@ -1,5 +1,56 @@
-.dashboard {
-  background-color: #28282C;
+.dashboard-page {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: stretch;
+}
+
+.dashboard-page .dashboard-post {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: 500px;
+  width: 500px;
+  margin: 20px;
+  padding: 10px;
+  height: 700px;
+  width: 500px;
+  border: 0.2em solid #8EE3C8;
+  background: #1e1e21;
+}
+
+.dashboard-page .dashboard-post .dashboard-image {
+  width: 100%;
+}
+
+.dashboard-page .dashboard-post .post-header {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  font-size: 22px;
+  margin-top: 15px;
+}
+
+.dashboard-page .dashboard-post .post-header a {
+  text-decoration: none;
+  color: #8EE3C8;
+}
+
+.dashboard-page .dashboard-post .post-header .post-header-left {
+  display: flex;
+  flex-direction: row;
+  width: 450px;
+}
+
+.dashboard-page .dashboard-post .post-header .post-header-left .post-header-text {
+  margin-right: 50px;
+  margin-left: 10px;
+  margin-bottom: 20px;
 }
 
 .NavClass {
@@ -8,7 +59,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #28282C;
+  background: #151517;
 }
 
 .NavClass a {
@@ -61,8 +112,226 @@ button:hover {
 .Footer {
   color: #8EE3C8;
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   align-items: center;
+}
+
+.Auth {
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.Auth-Box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  height: 250px;
+  width: 330px;
+  border: 0.2em solid #8EE3C8;
+}
+
+.auth-input {
+  margin-bottom: 10px;
+}
+
+.dashboard-page {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: stretch;
+}
+
+.dashboard-page .dashboard-post {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: 500px;
+  width: 500px;
+  margin: 20px;
+  padding: 10px;
+  height: 700px;
+  width: 500px;
+  border: 0.2em solid #8EE3C8;
+  background: #1e1e21;
+}
+
+.dashboard-page .dashboard-post .dashboard-image {
+  width: 100%;
+}
+
+.dashboard-page .dashboard-post .post-header {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  font-size: 22px;
+  margin-top: 15px;
+}
+
+.dashboard-page .dashboard-post .post-header a {
+  text-decoration: none;
+  color: #8EE3C8;
+}
+
+.dashboard-page .dashboard-post .post-header .post-header-left {
+  display: flex;
+  flex-direction: row;
+  width: 450px;
+}
+
+.dashboard-page .dashboard-post .post-header .post-header-left .post-header-text {
+  margin-right: 50px;
+  margin-left: 10px;
+  margin-bottom: 20px;
+}
+
+.profile-page {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: stretch;
+}
+
+.profile-page .profile-dash {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  padding: 50px;
+  background: #1e1e21;
+}
+
+.profile-page .profile-dash .profile-dash-items {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-right: 50px;
+}
+
+.profile-page .profile-post {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: 500px;
+  width: 500px;
+  margin: 20px;
+  padding: 10px;
+  height: 700px;
+  width: 500px;
+  border: 0.2em solid #8EE3C8;
+  background: #1e1e21;
+}
+
+.profile-page .profile-post .profile-image {
+  width: 100%;
+}
+
+.profile-page .profile-post .post-header {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  font-size: 22px;
+  margin-top: 15px;
+}
+
+.profile-page .profile-post .post-header a {
+  text-decoration: none;
+  color: #8EE3C8;
+}
+
+.profile-page .profile-post .post-header .post-header-left {
+  display: flex;
+  flex-direction: row;
+  width: 450px;
+}
+
+.profile-page .profile-post .post-header .post-header-left .post-header-text {
+  margin-right: 50px;
+  margin-left: 10px;
+  margin-bottom: 20px;
+}
+
+.submit {
+  height: auto;
+  width: 100vw;
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.submit .submit-section {
+  height: 750px;
+  width: 400px;
+  border: 0.2em solid #8EE3C8;
+  color: #8EE3C8;
+}
+
+.submit .submit-section .Image-Drop {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.submit .submit-section .Image-Drop .drop-text {
+  color: #8EE3C8;
+}
+
+.submit .submit-section .input-section {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.submit .submit-section .input-section .submit-input-title {
+  background: transparent;
+  border: #8EE3C8;
+  color: #8EE3C8;
+}
+
+.submit .submit-section .input-section .submit-input-description {
+  height: 100px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background: transparent;
+  border: #8EE3C8;
+  color: #8EE3C8;
+}
+
+h3 {
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  color: #8EE3C8;
+}
+
+p1 {
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  color: #8EE3C8;
 }
 
 * {

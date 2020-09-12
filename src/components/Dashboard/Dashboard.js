@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import styles from '../../css/styles.css'
 import { withRouter } from "react-router-dom";
 import {Link} from "react-router-dom"
 import {getUser} from '../../ducks/reducer'
@@ -28,29 +27,35 @@ class Dashboard extends Component {
     } else {
       const mappedArt = this.state.artBulletin.map((e) => {
         return (
-          <div key = {e.post_id}>
-            <img
-              src={e.image}
-              style={{ height: 500 }}
-            />
-            <h3>
-              <Link to ={`/post/${e.post_id}`}>
-                {e.title}
-              </Link>
-            </h3>
-            <h3>
-              by: 
-              <Link to = {`/profile/${e.user_id}`}>
-                {e.username}
-              </Link>
-            </h3>
-            <h3>{e.post_points}</h3>
-            <h3>{e.description}</h3>
+          <div key = {e.post_id} className="dashboard-page">
+            <div className="dashboard-post"> 
+              <img
+                src={e.image}
+                className="dashboard-image"
+              />
+              <div className="post-header">
+                <div className="post-header-left">
+                  <h3 className="post-header-text">
+                    <Link to ={`/post/${e.post_id}`}>
+                      {e.title}
+                    </Link>
+                  </h3>
+                  <h3 className="post-header-text">
+                    by: 
+                    <Link to = {`/profile/${e.user_id}`}>
+                      {e.username}
+                    </Link>
+                  </h3>
+                </div>
+                <h3>{e.post_points}</h3>
+              </div>
+              <p1>{e.description}</p1>
+            </div>
           </div>
         );
       });
       return (
-        <div className="dashboard">
+        <div className="dashboard-page">
           {mappedArt}
         </div>
       );

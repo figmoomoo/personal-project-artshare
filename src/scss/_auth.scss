@@ -1,0 +1,24 @@
+.Auth {
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.Auth-Box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    height: 250px;
+    width: 330px;  
+    border: 0.2em solid $primary-mint-color;
+}
+
+.auth-input {
+    margin-bottom: 10px;
+    
+}

@@ -53,18 +53,18 @@ class Register extends Component{
     render() {
         console.log(this.props)
         return(
-            <div className="Register">
-                <div className="Register-Box">
-                    <h1>Register Page</h1>
-                    <div>
+            <div className="Auth">
+                <div className="Auth-Box">
+                    <img src="https://cdn.discordapp.com/attachments/718455188100350035/754221277136289853/AH_Register.png" style={{height: 60}}/>
+                    <div className="auth-input">
                         <input type="text" placeholder="Username"onChange={this.handleUsernameChange}/>
                     </div>
-                    <div>
+                    <div className="auth-input">
                         <input type="password" placeholder="Password"onChange={this.handlePasswordChange}/>
                     </div>
                     <div className="buttons">
-                    </div>
                         <button onClick={this.handleRegister}>Register</button>
+                    </div >   
                 </div>
             </div>
         )

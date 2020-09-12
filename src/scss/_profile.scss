@@ -1,4 +1,4 @@
-.dashboard-page {
+.profile-page {
     display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
@@ -6,8 +6,21 @@
 	align-items: center;
     align-content: stretch;
     
+    .profile-dash {
+        display: flex;
+	    flex-direction: row;
+        width: 100vw;
+        padding: 50px;
+        background: darken($primary-dark-color, 4%);
+        .profile-dash-items {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-right: 50px;
+        }
+    }
     
-    .dashboard-post {
+    .profile-post {
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
@@ -20,7 +33,7 @@
         width: 500px;  
         border: 0.2em solid $primary-mint-color;
         background: darken($primary-dark-color, 4%);
-        .dashboard-image {
+        .profile-image {
             width: 100%;
         }
         .post-header {

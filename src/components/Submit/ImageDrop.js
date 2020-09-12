@@ -59,10 +59,10 @@ class ImageDrop extends Component {
   render() {
     const { url, isUploading } = this.state;
     return (
-      <div className="App">
-        <h1>Upload</h1>
-        <h1>{url}</h1>
-        <img src={url} alt="" width="450px" />
+      <div className="Image-Drop">
+        {/* <h1>Upload</h1>
+        <h1>{url}</h1> */}
+        <img src={url} alt="" width="250px" />
 
         <Dropzone
           onDropAccepted={this.getSignedRequest}
@@ -71,7 +71,8 @@ class ImageDrop extends Component {
             width: 200,
             height: 200,
             borderWidth: 7,
-            marginTop: 100,
+            marginTop: 20,
+            marginBottom: 20,
             borderColor: 'rgb(102, 102, 102)',
             borderStyle: 'dashed',
             borderRadius: 5,
@@ -83,7 +84,7 @@ class ImageDrop extends Component {
           accept="image/*"
           multiple={false}
         >
-          {isUploading ? <GridLoader /> : <p>Drop File or Click Here</p>}
+          {isUploading ? <GridLoader /> : <p className="drop-text">Drop File or Click Here</p>}
         </Dropzone>
       </div>
     );

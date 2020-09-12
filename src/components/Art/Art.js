@@ -8,8 +8,8 @@ class Art extends Component {
     super();
     this.state = {
       specificArt: [],
-      title: '',
-      description: '',
+      title: "",
+      description: "",
       toggle: false,
     };
   }
@@ -22,16 +22,16 @@ class Art extends Component {
     this.setState({ toggle: !this.state.toggle });
   }
 
-// this is for the Edit function 
+  // this is for the Edit function
   handleChange = (e) => {
-      this.setState({[e.target.name]:e.target.value})
-  }
+    this.setState({ [e.target.name]: e.target.value });
+  };
 
   deleteArt = (id) => {
     axios
       .delete(`/api/deletePost/${id}`)
       .then(() => this.props.history.push("/dashboard"));
-  }
+  };
 
   saveArtInfo = async () => {
     let newPost = axios.put(`/api/edit/${this.props.match.params.id}`, {
@@ -46,7 +46,7 @@ class Art extends Component {
 
   async getSpecificArt() {
     const response = await axios.get(`/api/post/${this.props.match.params.id}`);
-    console.log(response.data)
+    console.log(response.data);
     this.setState({ specificArt: response.data });
   }
 
@@ -74,14 +74,23 @@ class Art extends Component {
               </div>
             </div>
           ) : (
-            <div>
-                {/* this is for the Edit function */}
+            <div className="Edit">
+              {/* this is for the Edit function */}
               <img src={e.image} style={{ height: 800 }} />
-              <input value={this.state.title} onChange={this.handleChange} name="title"/>
+              <input
+                value={this.state.title}
+                onChange={this.handleChange}
+                name="title"
+              />
               <h3>by: {e.username}</h3>
               <h3>{e.post_points}</h3>
-              <input value={this.state.description} onChange={this.handleChange} name="description"/>
+              <input
+                value={this.state.description}
+                onChange={this.handleChange}
+                name="description"
+              />
               <button onClick={this.saveArtInfo}>Save</button>
+              <button onClick={() => this.handleToggle()}>Cancel</button>
             </div>
           )}
         </div>

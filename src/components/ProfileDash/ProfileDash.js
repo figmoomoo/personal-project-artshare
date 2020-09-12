@@ -22,7 +22,7 @@ class ProfileDash extends Component{
     render(props) {
         const userMappedDash = this.state.dashInfo.map((e) => {
             return (
-              <div>
+              <div className="profile-dash-items">
                 <div>
                     <img 
                         src={e.profile_picture} 
@@ -39,7 +39,7 @@ class ProfileDash extends Component{
             );
           });
           return (
-              <div>
+              <div className="profile-dash">
                   {userMappedDash}
               </div>
           )
