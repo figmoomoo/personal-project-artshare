@@ -6,6 +6,18 @@
   justify-content: space-between;
   background: darken($primary-dark-color, 8%);
 
+  .logo {
+    height: 200px;
+  }
+
+  .mobile-nav {
+    display: none;
+  }
+
+  .mobile-dropdown {
+    display: none;
+  }
+
   a {
     text-decoration: none;
     color: $primary-mint-color;
@@ -19,6 +31,27 @@
   .NavButtons {
     text-decoration: none;
     margin: 50px 50px;
+  }
+  @media all and (max-width: 30em) {
+    a.button1 {
+      display: block;
+      margin: 0.4em auto;
+    }
+  }
+  
+  @media (max-width: $breakpoint-mobile) {
+    .desktop-nav {
+      display: none
+    }
+    .logo {
+      height: 150px;
+    }
+    .mobile-dropdown {
+      width: 30vw;
+      display: initial;
+      display: flex;
+
+    }
   }
 }
 
@@ -44,10 +77,4 @@ button {
 button:hover {
   color: $primary-mint-color;
   background-color: $primary-blue-color;
-}
-@media all and (max-width: 30em) {
-  a.button1 {
-    display: block;
-    margin: 0.4em auto;
-  }
 }

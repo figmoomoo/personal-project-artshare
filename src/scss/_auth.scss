@@ -16,9 +16,13 @@
     height: 250px;
     width: 330px;  
     border: 0.2em solid $primary-mint-color;
+    background-color: darken($primary-dark-color, 4%);
+    .auth-img {
+        height: 60px;
+        margin-bottom: 20px;
+    }
+    .auth-input {
+        margin-bottom: 10px;
+    }
 }
 
-.auth-input {
-    margin-bottom: 10px;
-    
-}

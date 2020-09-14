@@ -38,7 +38,7 @@ class Submit extends Component {
       description: this.state.description,
       image: this.state.image,
       post_points: 0,
-      author_id: this.props.user.user_id,
+      user_id: this.props.user.user_id,
     };
 
     axios.post(`/api/newPost`, newArt).then((res) => {

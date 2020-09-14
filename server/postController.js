@@ -25,8 +25,8 @@ module.exports = {
     },
     addArt: async (req, res) => {
         const db = req.app.get('db')
-        const {title, description, image, post_points, author_id} = req.body;
-        const artPosts = await db.posts.create_post([title, description, image, post_points, author_id])
+        const {title, description, image, post_points, user_id} = req.body;
+        const artPosts = await db.posts.create_post([title, description, image, post_points, user_id])
         res.status(200).send(artPosts)
     },
     updateArt: async (req, res) => {

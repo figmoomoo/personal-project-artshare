@@ -55,7 +55,7 @@ class Register extends Component{
         return(
             <div className="Auth">
                 <div className="Auth-Box">
-                    <img src="https://cdn.discordapp.com/attachments/718455188100350035/754221277136289853/AH_Register.png" style={{height: 60}}/>
+                    <img className="auth-img" src="https://cdn.discordapp.com/attachments/718455188100350035/754221277136289853/AH_Register.png"/>
                     <div className="auth-input">
                         <input type="text" placeholder="Username"onChange={this.handleUsernameChange}/>
                     </div>

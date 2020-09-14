@@ -1,7 +1,8 @@
 .Footer{
     color: $primary-mint-color;
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
     // justify-content: flex-end;
     align-items: center;
+    font-size: 20px;
 }

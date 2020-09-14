@@ -6,6 +6,7 @@ const authController = require("./authController");
 const postController = require("./postController")
 const session = require("express-session");
 const userController = require("./userController");
+const commentController = require('./commentController');
 
 const app = express();
 
@@ -52,6 +53,13 @@ app.get('/api/post/:id', postController.getArtById)
 app.post('/api/newPost/', postController.addArt)
 app.delete('/api/deletePost/:id', postController.deleteArt)
 app.put('/api/edit/:id', postController.updateArt)
+
+//Comment Endpoints
+app.get('/api/comment/:id', commentController.getCommentsById)
+app.get('/api/comments/:id', commentController.getPostComments)
+app.post('/api/addComment/', commentController.addComment)
+app.delete('/api/deleteComment/:id', commentController.deleteComment)
+app.put('/api/editComment/:id', commentController.updateComment)
 
 //User Endpoints
 app.get('/api/profile/:id', userController.getUserInfo)

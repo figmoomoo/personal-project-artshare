@@ -1,0 +1,13 @@
+.front-page-main {
+    height: 80vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+
+    .front-page-img {
+        width: 80vw;
+    }
+}
+

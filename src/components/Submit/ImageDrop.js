@@ -62,25 +62,11 @@ class ImageDrop extends Component {
       <div className="Image-Drop">
         {/* <h1>Upload</h1>
         <h1>{url}</h1> */}
-        <img src={url} alt="" width="250px" />
+        <img className="Image-Drop-image"src={url} alt=""/>
 
         <Dropzone
+          className="Dropzone"
           onDropAccepted={this.getSignedRequest}
-          style={{
-            position: 'relative',
-            width: 200,
-            height: 200,
-            borderWidth: 7,
-            marginTop: 20,
-            marginBottom: 20,
-            borderColor: 'rgb(102, 102, 102)',
-            borderStyle: 'dashed',
-            borderRadius: 5,
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            fontSize: 28,
-          }}
           accept="image/*"
           multiple={false}
         >

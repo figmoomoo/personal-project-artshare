@@ -24,15 +24,14 @@ class ProfileDash extends Component{
             return (
               <div className="profile-dash-items">
                 <div>
-                    <img 
+                    <img className="profile-dash-picture"
                         src={e.profile_picture} 
-                        style={{height: 200}}
                     />
                 </div>
-                <div>
-                    <h3>{e.username}</h3>
-                    <h3>{e.art_count}</h3>
-                    <h3>{e.profile_description}</h3>
+                <div className="profile-dash-info">
+                    <h3 className="profile-dash-info-items">{e.username}</h3>
+                    <h3 className="profile-dash-info-items">{e.art_count}</h3>
+                    <h3 className="profile-dash-info-items">{e.profile_description}</h3>
                 </div>
 
               </div>

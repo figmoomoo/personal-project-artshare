@@ -15,8 +15,19 @@
         .profile-dash-items {
             display: flex;
             flex-direction: row;
-            align-items: center;
-            margin-right: 50px;
+            align-items: flex-start;
+            .profile-dash-picture {
+                height: 200px; 
+            }
+            .profile-dash-info {
+                margin: 30px;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                .profile-dash-info-items{
+                    margin: 5px;
+                }
+            }
         }
     }
     
@@ -25,8 +36,6 @@
         flex-direction: column;
         justify-content: flex-start;
         align-items: flex-start;
-        height: 500px;
-        width: 500px;
         margin: 20px;
         padding: 10px;
         height: 700px;
@@ -62,6 +71,76 @@
                 
             }
             
+        }
+    }
+    @media (max-width: $breakpoint-mobile){
+        .profile-dash {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            width: 100vw;
+            padding: 20px;
+            background: darken($primary-dark-color, 4%);
+            .profile-dash-items {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                .profile-dash-picture {
+                    height: 150px; 
+                }
+                .profile-dash-info {
+                    margin: 30px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    .profile-dash-info-items{
+                        margin: 5px;
+                    }
+                }
+            }
+        }
+        .profile-post {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            margin: 20px;
+            padding: 10px;
+            height: 50vh;
+            width: 60vw;  
+            border: 0.2em solid $primary-mint-color;
+            background: darken($primary-dark-color, 4%);
+            .profile-image {
+                width: 100%;
+            }
+            .post-header {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                justify-content: space-between;
+                align-items: flex-start;
+                font-size: 14px;
+                margin-top: 10px;
+                
+                a{
+                    text-decoration: none;
+                    color: $primary-mint-color;
+                }
+                .post-header-left {
+                    display: flex;
+                    flex-direction: row;
+                    width: 50vw;
+                    .post-header-text {
+                        // margin-right: 10px;
+                        // margin-left: 2px;
+                        // margin-bottom: 5px;
+                    }
+                    
+                    
+                }
+                
+            }
         }
     }
 }

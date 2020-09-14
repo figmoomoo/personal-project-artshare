@@ -9,8 +9,8 @@
 	align-items: center;
 	align-content: center;
     .submit-section {
-        height: 750px;
-        width: 400px;
+        height: 80vh;
+        width: 60vw;
         border: 0.2em solid $primary-mint-color;
         color: $primary-mint-color;
         .Image-Drop {
@@ -19,7 +19,25 @@
             flex-wrap: nowrap;
             justify-content: center;
             align-items: center;
-            margin-top: 50px;   
+            margin-top: 50px;
+            .Image-Drop-image {
+                width: 270px;
+            }
+            .Dropzone {
+                position: relative;
+                width: 200px;
+                height: 200px;
+                border-width: 7px;
+                margin-top: 20px;
+                margin-bottom: 20px;
+                border-color: rgb(102, 102, 102);
+                border-style: dashed;
+                border-radius: 5%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 28px;
+            }
             .drop-text {
                 color: $primary-mint-color;
             }
@@ -34,13 +52,46 @@
                 background: transparent;
                 border: $primary-mint-color;
                 color: $primary-mint-color;
+                width: 20vw;
             }
             .submit-input-description {
                 height: 100px;
+                width: 20vw;
                 margin-top: 10px;
                 margin-bottom: 10px;
                 background: transparent;
                 border: $primary-mint-color;
+                color: $primary-mint-color;
+            }
+        }
+    }
+    @media (max-width: $breakpoint-mobile) {
+        .Image-Drop {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            justify-content: center;
+            align-items: center;
+            margin-top: 50px;
+            .Image-Drop-image {
+                width: 150px;
+            }
+            .Dropzone {
+                position: relative;
+                width: 130px;
+                height: 130px;
+                border-width: 7px;
+                margin-top: 20px;
+                margin-bottom: 20px;
+                border-color: rgb(102, 102, 102);
+                border-style: dashed;
+                border-radius: 5%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 28px;
+            }
+            .drop-text {
                 color: $primary-mint-color;
             }
         }

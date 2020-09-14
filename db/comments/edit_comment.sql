@@ -1,3 +1,3 @@
 UPDATE artPostComments SET
-comment = ${comment},
-WHERE comment_id = ${comment_id};
+comment = $2,
+WHERE comment_id = $1;

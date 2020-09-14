@@ -46,7 +46,7 @@ class Login extends Component{
         return(
             <div className="Auth">
                 <div className="Auth-Box">
-                    <img src="https://cdn.discordapp.com/attachments/718455188100350035/754221271360733184/AH_Login.png" style={{height: 60}}/>
+                    <img className="auth-img" src="https://cdn.discordapp.com/attachments/718455188100350035/754221271360733184/AH_Login.png"/>
                     <div className="auth-input">
                         <input type="text" placeholder="Username"onChange={this.handleUsernameChange}/>
                     </div>
